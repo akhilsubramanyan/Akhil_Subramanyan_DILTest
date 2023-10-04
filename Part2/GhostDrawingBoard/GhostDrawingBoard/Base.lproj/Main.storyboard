@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ghost Drawing Board View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GhostDrawingBoardViewController" customModule="GhostDrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bW6-jC-h6W">
+                                <rect key="frame" x="10" y="69" width="373" height="739"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gIc-aa-Yrt">
+                                        <rect key="frame" x="123.66666666666666" y="0.0" width="125.66666666666666" height="20.333333333333332"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSS-op-xei">
+                                                <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKm-yE-NEx">
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="30" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-ok-Vb1">
+                                        <rect key="frame" x="0.0" y="30.333333333333314" width="373" height="606.33333333333348"/>
+                                        <connections>
+                                            <segue destination="i2i-PL-1L3" kind="embed" identifier="canvas" id="hvl-vr-9Pk"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXb-sQ-FNN">
+                                        <rect key="frame" x="0.0" y="646.66666666666663" width="373" height="92.333333333333371"/>
+                                        <connections>
+                                            <segue destination="yy0-by-nzt" kind="embed" identifier="toolBox" id="0Un-5O-msL"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pXb-sQ-FNN" firstAttribute="height" secondItem="bW6-jC-h6W" secondAttribute="height" multiplier="0.125" id="4bV-q2-qhP"/>
+                                    <constraint firstItem="0Bo-ok-Vb1" firstAttribute="width" secondItem="bW6-jC-h6W" secondAttribute="width" id="AzV-JC-6W4"/>
+                                    <constraint firstItem="pXb-sQ-FNN" firstAttribute="width" secondItem="bW6-jC-h6W" secondAttribute="width" id="hAr-uP-21C"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="bW6-jC-h6W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ecB-si-r34"/>
+                            <constraint firstItem="bW6-jC-h6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="fef-01-2XO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bW6-jC-h6W" secondAttribute="bottom" constant="10" id="wDk-hg-A6h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bW6-jC-h6W" secondAttribute="trailing" constant="10" id="yHf-oy-oJC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selectionLabel" destination="CKm-yE-NEx" id="VWw-ZT-xAv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370" y="-968"/>
+        </scene>
+        <!--Tool Box View Controller-->
+        <scene sceneID="TNg-3D-Xh0">
+            <objects>
+                <viewController id="yy0-by-nzt" customClass="ToolBoxViewController" customModule="GhostDrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bsS-Mk-jvU">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="92"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="peL-bZ-zMQ">
+                                <rect key="frame" x="2" y="2" width="369" height="88"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6S2-cV-iLM"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="peL-bZ-zMQ" secondAttribute="bottom" constant="2" id="B2O-hE-jG8"/>
+                            <constraint firstItem="peL-bZ-zMQ" firstAttribute="leading" secondItem="bsS-Mk-jvU" secondAttribute="leading" constant="2" id="J9D-3j-Pc3"/>
+                            <constraint firstAttribute="trailing" secondItem="peL-bZ-zMQ" secondAttribute="trailing" constant="2" id="gKb-4N-VeN"/>
+                            <constraint firstItem="peL-bZ-zMQ" firstAttribute="top" secondItem="bsS-Mk-jvU" secondAttribute="top" constant="2" id="ypS-s8-UWp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="toolBoxStack" destination="peL-bZ-zMQ" id="ocK-Jn-sFB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxM-mO-RAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="-677"/>
+        </scene>
+        <!--Ghost Canvas Container View Controller-->
+        <scene sceneID="oCY-BR-pim">
+            <objects>
+                <viewController id="i2i-PL-1L3" customClass="GhostCanvasContainerViewController" customModule="GhostDrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uRa-J8-pMi">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="607"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="f2D-qY-5I5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDf-uT-Bra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="426.71755725190837" y="-1087.323943661972"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
